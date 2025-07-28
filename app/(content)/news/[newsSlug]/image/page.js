@@ -1,0 +1,24 @@
+import Image from "next/image";
+import { DUMMY_NEWS } from "@/dummy-news";
+
+export default function ImagePage({ params }) {
+  const newsSlug = params.newsSlug;
+  const newsItem = DUMMY_NEWS.find((newsItem) => newsItem.slug === newsSlug);
+
+  if (!newsItem) {
+    notFound();
+  }
+
+  return (
+    <div
+      className="news-image-wrapper"
+    >
+      <Image
+        src={`/images/news/${newsItem.image}`}
+        alt={newsItem.title}
+        fill
+        className="news-image"
+      />
+    </div>
+  );
+}
