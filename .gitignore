@@ -38,4 +38,4 @@ yarn-error.log*
 next-env.d.ts
 
 # ───── Local Development Files ───────────────────
-/backend/data.db
+data.db

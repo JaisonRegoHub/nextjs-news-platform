@@ -38,45 +38,20 @@ npm run lint
 
 ---
 
-## 🛠 Backend (Express + SQLite)
+### 🗃️ Setup Database
 
-### 📁 Location
+No backend setup is needed. The SQLite database is initialized and seeded automatically on first run using local scripts.
 
-```
-/backend
-```
-
-### 📦 Dependencies
-
-* `express` – Minimal web framework
-* `cors` – CORS support for frontend-backend communication
-* `better-sqlite3` – Lightweight SQLite driver
-
-### 🗃 Data
-
-The server auto-seeds a SQLite database (`data.db`) on first run with predefined dummy news articles.
-
-### 🌍 Endpoints
-
-| Method | Route   | Description             |
-| ------ | ------- | ----------------------- |
-| GET    | `/news` | Fetch all news articles |
-
-### 🔧 Setup
-
-From the project root:
+If needed manually:
 
 ```bash
-cd backend
-npm install
-npm start
+npm run db:setup
 ```
 
-The server will start on:
+This will:
 
-```
-http://localhost:8080
-```
+* Create `news.db` inside `/data`
+* Seed it with dummy news articles
 
 ---
 
@@ -85,9 +60,6 @@ http://localhost:8080
 ```
 ├── app/                # Next.js app directory
 │   └── ...             # Parallel/intercepted routes
-├── backend/            # Express server
-│   ├── app.js
-│   └── package.json
 ├── components/         # Reusable components
 ├── lib/                # News data fetching logic
 ├── public/             # Static images

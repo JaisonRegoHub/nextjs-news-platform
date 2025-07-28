@@ -1,8 +1,10 @@
-export function GET(request) {
-  return new Response('Handling Requests');
+export function GET() {
+  return new Response('Handling GET Request');
 }
 
-// export function POST(request) {
-//   console.log(request);
-//   return new Response();
-// }
+export async function POST(request) {
+  const body = await request.json();
+  console.log('Received POST:', body);
+
+  return new Response('POST received');
+}
