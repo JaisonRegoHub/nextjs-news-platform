@@ -2,7 +2,6 @@
 
 # ───── Dependencies ──────────────────────────────
 /node_modules
-/backend/node_modules
 /.pnp
 .pnp.*
 .yarn/*
@@ -38,4 +37,4 @@ yarn-error.log*
 next-env.d.ts
 
 # ───── Local Development Files ───────────────────
-data/news.db
+data/*
